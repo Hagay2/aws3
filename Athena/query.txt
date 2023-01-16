@@ -1,0 +1,5 @@
+SELECT name as company, substr(ts,1,10) as date, AVG(volatility) AS avg_volatility, MAX(volatility) AS max_volatility, MIN(volatility) AS min_volatility
+FROM hagay_bucket
+where ts < '2022-12-16'
+GROUP BY name, substr(ts,1,10)
+ORDER BY name, substr(ts,1,10);
